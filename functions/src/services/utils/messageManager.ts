@@ -1,7 +1,8 @@
-import { IMessage } from "../../utils/message";
+import { IMessage } from "@utils/message";
 
 class ServiceMessageManager {
   successMessage(message: string, response?: any): IMessage {
+    console.log("Success message:", message);
     return {
       message,
       status: 200,
@@ -11,6 +12,7 @@ class ServiceMessageManager {
   }
 
   informationMessage(message: string, response?: any): IMessage {
+    console.log("Information message:", message);
     return {
       message,
       status: 250,
@@ -20,6 +22,7 @@ class ServiceMessageManager {
   }
 
   errorMessage(message: string, response?: any): IMessage {
+    console.log("Error message:", message);
     return {
       message,
       status: 400,

@@ -1,13 +1,18 @@
 import { INote } from "@models/export";
+import { IMessage } from "@utils/message";
+import { serviceMessageManager } from "@services/export";
 
 class NoteDataSource {
 
-  getNotes(): INote {
-    return {
+  getNotes():IMessage {
+
+    const note: INote = {
       id: 1,
-      description: "Descrição da nota 1",
+      description: "Nota de teste",
       success: true,
     };
+
+    return serviceMessageManager.successMessage("Notas encontradas", note);
   }
 
   postNote() {
