@@ -1,6 +1,6 @@
 import { onRequest } from "firebase-functions/v2/https";
 import express from "express";
-import routes from "./routes";
+import routes from "@routes/index";
 
 const api = express();
 

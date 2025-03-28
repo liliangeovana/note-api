@@ -1,4 +1,5 @@
-import { noteDataSource } from "../../datasource";
+import { noteDataSource } from "@datasources/export";
+
 
 class NoteService {
 

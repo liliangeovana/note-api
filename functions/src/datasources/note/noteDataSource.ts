@@ -1,7 +1,13 @@
+import { INote } from "@models/export";
+
 class NoteDataSource {
 
-  getNotes() {
-    return "Lista de notas";
+  getNotes(): INote {
+    return {
+      id: 1,
+      description: "Descrição da nota 1",
+      success: true,
+    };
   }
 
   postNote() {

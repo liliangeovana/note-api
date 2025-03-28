@@ -33,6 +33,7 @@ module.exports = {
     "new-cap": "off",
     "padded-blocks": "off",
     "require-jsdoc": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 };

@@ -1,4 +1,4 @@
-import { noteService } from "../../services";
+import { noteService } from "@services/export";
 
 class NoteController {
 

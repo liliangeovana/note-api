@@ -7,6 +7,15 @@
     "noUnusedLocals": true,
     "outDir": "lib",
     "sourceMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@controllers/*": ["./controllers/*"],
+      "@datasources/*": ["./datasources/*"],
+      "@models/*": ["./models/*"],
+      "@routes/*": ["./routes/*"],
+      "@services/*": ["./services/*"],
+      "@utils/*": ["./utils/*"],
+    },
     "strict": true,
     "target": "es2017"
   },
