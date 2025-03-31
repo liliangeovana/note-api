@@ -1,22 +1,22 @@
+import db from "@config/firestore";
 import { INote } from "@models/export";
-import { IMessage } from "@utils/message";
-import { serviceMessageManager } from "@services/export";
+import { messageManager } from "@utils/message";
 
 class NoteDataSource {
 
-  getNotes():IMessage {
+  getNotes() {
 
     const note: INote = {
       id: 1,
       description: "Nota de teste",
-      success: true,
     };
 
-    return serviceMessageManager.successMessage("Notas encontradas", note);
+    return messageManager.successMessage( note);
   }
 
-  postNote() {
-    return "Nota criada";
+  async storeNote(note: INote) {
+    db.collection("notes").doc().set(note);
+    return messageManager.successMessage(note);
   }
 
   putNote() {

@@ -4,6 +4,7 @@ import routes from "@routes/index";
 
 const api = express();
 
-api.use( routes);
+api.use(express.json());
+api.use(routes);
 
 exports.api = onRequest(api);

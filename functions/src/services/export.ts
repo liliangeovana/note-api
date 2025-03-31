@@ -1,2 +1,1 @@
-export * from "./modules/note/noteService";
-export * from "./utils/messageManager";
+export * from "./note/noteService";

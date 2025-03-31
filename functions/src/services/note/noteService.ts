@@ -1,4 +1,5 @@
 import { noteDataSource } from "@datasources/export";
+import { INote } from "@models/export";
 
 
 class NoteService {
@@ -7,8 +8,8 @@ class NoteService {
     return noteDataSource.getNotes();
   }
 
-  postNote() {
-    return noteDataSource.postNote();
+  storeNote(note: INote) {
+    return noteDataSource.storeNote(note);
   }
 
   putNote() {

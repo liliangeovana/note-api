@@ -8,7 +8,7 @@ router.route("/")
     res.json({ message: noteController.getNotes() });
   })
   .post((req, res) => {
-    res.status(201).json({ message: noteController.postNote() });
+    noteController.storeNote(req, res);
   })
   .put((req, res) => {
     res.json({ message: noteController.putNote() });
