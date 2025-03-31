@@ -1,4 +1,5 @@
 import { noteService } from "@services/export";
+import { INote } from "@models/export";
 
 class NoteController {
 
@@ -6,18 +7,8 @@ class NoteController {
     return noteService.getNotes();
   }
 
-  async storeNote(req: any, res: any) {
-    try {
-      const note = await noteService.storeNote(req.body); 
-      res.status(200).json({
-        message: "Nota criada com sucesso.",
-        data: note
-      });
-    } catch (error: any) {
-      res.status(400).json({
-        message: error.message
-      });
-    }
+  storeNote(note: INote) {
+    return noteService.storeNote(note);
   }
 
   putNote() {

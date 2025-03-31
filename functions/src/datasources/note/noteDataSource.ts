@@ -11,12 +11,12 @@ class NoteDataSource {
       description: "Nota de teste",
     };
 
-    return messageManager.successMessage( note);
+    return messageManager.successMessage("Notas encontradas", 200, note);
   }
 
-  async storeNote(note: INote) {
-    db.collection("notes").doc().set(note);
-    return messageManager.successMessage(note);
+  storeNote(note: INote) {
+    const notes = db.collection("notes").doc().set(note);
+    return messageManager.successMessage("Nota criada", 201, notes);
   }
 
   putNote() {

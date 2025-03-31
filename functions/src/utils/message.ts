@@ -1,17 +1,40 @@
+interface IMessage {
+  message: string;
+  status: number;
+  success: boolean;
+  data?: any;
+}
+
 class MessageManager {
-  successMessage(response?: any) {
-    console.log("Success message:", response);
-    return response;
+
+  successMessage(message: string, status: number, data?: any): IMessage {
+    console.log("Success message:", message);
+    return {
+      message,
+      status,
+      success: true,
+      data,
+    };
   }
 
-  informationMessage(response?: any) {
-    console.log("Information message:", response);
-    return response;
+  informationMessage(message: string, status: number, data?: any) {
+    console.log("Information message: ", message);
+    return {
+      message,
+      status,
+      success: true,
+      data,
+    };
   }
 
-  errorMessage(response?: any) {
-    console.log("Error message:", response);
-    return response;
+  errorMessage(message: string, status: number, data?: any) {
+    console.log("Error message:", message);
+    return {
+      message,
+      status,
+      success: true,
+      data,
+    };
   }
 }
 
