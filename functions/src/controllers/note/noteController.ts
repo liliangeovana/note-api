@@ -19,7 +19,7 @@ class NoteController {
     return noteService.deleteNote();
   }
 
-  getNoteById(id_note: string | number) {
+  getNoteById(id_note: string) {
     return noteService.getNoteById(id_note);
   }
 

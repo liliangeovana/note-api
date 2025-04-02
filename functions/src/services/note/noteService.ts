@@ -20,7 +20,7 @@ class NoteService {
     return noteDataSource.deleteNote();
   }
 
-  getNoteById(id_note: string | number) {
+  getNoteById(id_note: string) {
     return noteDataSource.getNoteById(id_note);
   }
 

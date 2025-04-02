@@ -7,8 +7,8 @@ router.route("/")
   .get((req, res) => {
     res.json(noteController.getNotes());
   })
-  .post((req, res) => {
-    res.json(noteController.storeNote(req.body));
+  .post(async (req, res) => {
+    res.json(await noteController.storeNote(req.body));
   })
   .put((req, res) => {
     res.json(noteController.putNote());
@@ -17,8 +17,8 @@ router.route("/")
     res.json(noteController.deleteNote());
   });
 
-router.get("/:note_id", (req, res) => {
-  res.json(noteController.getNoteById(req.params.note_id));
+router.get("/:note_id", async (req, res) => {
+  res.json(await noteController.getNoteById(req.params.note_id));
 });
 
 export default router;

@@ -1,4 +1,4 @@
-interface IMessage {
+export interface IMessage {
   message: string;
   status: number;
   success: boolean;
@@ -10,7 +10,7 @@ class MessageManager {
   successMessage(message: string, status: number, data?: any): IMessage {
     console.log("Success message:", message);
     return {
-      message,
+      message: `SUCCESS: ${message} successfully`,
       status,
       success: true,
       data,
@@ -30,9 +30,9 @@ class MessageManager {
   errorMessage(message: string, status: number, data?: any) {
     console.log("Error message:", message);
     return {
-      message,
+      message: `ERROR: ${message} failed`,
       status,
-      success: true,
+      success: false,
       data,
     };
   }
