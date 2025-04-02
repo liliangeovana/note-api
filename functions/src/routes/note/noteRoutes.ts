@@ -13,8 +13,8 @@ router.route("/")
   .put((req, res) => {
     res.json(noteController.putNote());
   })
-  .delete((req, res) => {
-    res.json(noteController.deleteNote());
+  .delete(async (req, res) => {
+    res.json(await noteController.deleteNote(req.body.id));
   });
 
 router.get("/:note_id", async (req, res) => {

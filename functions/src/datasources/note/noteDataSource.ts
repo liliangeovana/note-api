@@ -23,8 +23,18 @@ class NoteDataSource {
     return "Nota atualizada";
   }
 
-  deleteNote() {
-    return "Nota deletada";
+  async deleteNote(id_note: string) {
+    const note = db.collection("notes");
+
+    return await note
+      .doc(id_note)
+      .delete()
+      .then(() => {
+        return messageManager.successMessage("Nota apagada", 200);
+      })
+      .catch((error) => {
+        return messageManager.errorMessage("Erro ao apagar nota", 500, error);
+      });
   }
 
   async getNoteById(id_note: string): Promise<IMessage> {

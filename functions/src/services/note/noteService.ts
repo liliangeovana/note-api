@@ -16,8 +16,8 @@ class NoteService {
     return noteDataSource.putNote();
   }
 
-  deleteNote() {
-    return noteDataSource.deleteNote();
+  deleteNote(id_note: string) {
+    return noteDataSource.deleteNote(id_note);
   }
 
   getNoteById(id_note: string) {

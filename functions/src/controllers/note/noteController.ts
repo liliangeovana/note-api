@@ -15,8 +15,8 @@ class NoteController {
     return noteService.putNote();
   }
 
-  deleteNote() {
-    return noteService.deleteNote();
+  deleteNote(id_note: string) {
+    return noteService.deleteNote(id_note);
   }
 
   getNoteById(id_note: string) {
