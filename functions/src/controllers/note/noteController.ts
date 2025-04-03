@@ -15,7 +15,7 @@ export const getNotes = async (request: Request, response: Response) => {
 };
 
 
-// METHOD GET FOR ID
+// METHOD GET
 export const getNoteById = async (request: Request, response: Response) => {
   const note = await noteService.getUserById(request.params.note_id);
 
