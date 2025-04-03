@@ -1,24 +1,13 @@
-import { noteController } from "@controllers/export";
 import { Router } from "express";
+import * as noteController from "@controllers/note/noteController";
 
 const router = Router();
 
-router.route("/")
-  .get((req, res) => {
-    res.json(noteController.getNotes());
-  })
-  .post(async (req, res) => {
-    res.json(await noteController.storeNote(req.body));
-  })
-  .put((req, res) => {
-    res.json(noteController.putNote());
-  })
-  .delete(async (req, res) => {
-    res.json(await noteController.deleteNote(req.body.id));
-  });
+router.get("/", noteController.getNotes);
+router.post("/", noteController.postNote);
+router.put("/:note_id", noteController.putNote);
+router.delete("/:note_id", noteController.deleteNote);
+router.get("/:note_id", noteController.getNoteById);
 
-router.get("/:note_id", async (req, res) => {
-  res.json(await noteController.getNoteById(req.params.note_id));
-});
 
 export default router;

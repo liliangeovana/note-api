@@ -6,6 +6,4 @@ admin.initializeApp({
   databaseURL: process.env.FIREBASE_DATABASE_URL,
 });
 
-const db = admin.firestore();
-
-export default db;
+export const db = admin.firestore();

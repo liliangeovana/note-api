@@ -1,3 +1,5 @@
+// CONFIGURAÇÃO PRINCIPAL E INICIALIZADOR DO SERVIDOR
+
 import { onRequest } from "firebase-functions/v2/https";
 import express from "express";
 import routes from "@routes/index";
